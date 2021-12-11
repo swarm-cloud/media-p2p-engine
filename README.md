@@ -20,6 +20,7 @@ SwarmCloud         | ✔ | ✔  | ✔  |  ✔ | ✔ |  ✔ |  ❌ |
 See [documentation](https://swarmcloud.net/en/views/mp4-sw/usage.html)
 
 ## Related Projects
+- [hls-sw-p2p-engine](https://github.com/swarm-cloud/hls-sw-p2p-engine) - Live/VOD P2P Engine for all browsers including iOS Safari, with the help of ServiceWorker.
 - [hlsjs-p2p-engine](https://github.com/cdnbye/hlsjs-p2p-engine) - Web Video Delivery Technology with No Plugins for hls.js.
 - [dashjs-p2p-engine](https://github.com/cdnbye/dashjs-p2p-engine) - Web Video Delivery Technology with No Plugins for MPEG-dash.
 

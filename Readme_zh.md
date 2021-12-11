@@ -20,6 +20,7 @@ SwarmCloud         | ✔ | ✔  | ✔  |  ✔ | ✔ |  ✔ |  ❌ |
 参考[在线文档](https://swarmcloud.net/cn/views/mp4-sw/usage.html)
 
 ## 相关项目
+- [hls-sw-p2p-engine](https://github.com/swarm-cloud/hls-sw-p2p-engine) - 基于ServiceWorker的P2P流媒体加速引擎，适用于所有浏览器。
 - [hlsjs-p2p-engine](https://gitee.com/cdnbye/hlsjs-p2p-engine) - HLS协议的Web端P2P流媒体方案。
 - [dashjs-p2p-engine](https://github.com/cdnbye/dashjs-p2p-engine) - MPEG-dash协议的Web端P2P流媒体方案。
 
