@@ -1,0 +1,32 @@
+<script src="https://cdn.jsdelivr.net/npm/swarmcloud-mp4-sw@latest"></script>
+<!--<script src="../dist/mp4-p2p-engine.min.js"></script>-->
+<audio id="audio" controls></audio>
+<p id="version"></p>
+<h3>p2p info:</h3>
+<p id="peers"></p>
+<p id="info"></p>
+<script>
+    document.querySelector('#version').innerText = `p2p version: ${P2PEngineMp4.version}`;
+    var audio = document.getElementById('audio');
+    audio.src = './test.mp3'
+    var engine = new P2PEngineMP4({
+        // logLevel: 'debug',
+        pieceLength: 512*1024,
+    });
+
+    engine.registerServiceWorker().then(function (registration) {
+        console.info('ServiceWorker registration successful with scope: ', registration.scope);
+    }).catch((err) => {
+        console.info('ServiceWorker registration failed ', err)
+    });
+
+    engine.on('stats', function (stats) {
+        var total = stats.totalHTTPDownloaded + stats.totalP2PDownloaded;
+        document.querySelector('#info').innerText = `p2p ratio: ${Math.round(stats.totalP2PDownloaded/total*100)}%   saved traffic: ${Math.round(stats.totalP2PDownloaded)}KB upload: ${Math.round(stats.totalP2PUploaded)}KB`;
+    })
+
+    engine.on('peers', function (peers) {
+        document.querySelector('#peers').innerText = `peers: ${peers.length}`;
+    })
+
+</script>
