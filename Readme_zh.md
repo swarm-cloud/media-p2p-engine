@@ -1,7 +1,7 @@
 **[English](README.md) | 简体中文**
 
 <h1 align="center"><a href="" target="_blank" rel="noopener noreferrer"><img width="250" src="https://swarmcloud.net/logo.png" alt="logo"></a></h1>
-<h4 align="center">基于ServiceWorker的MP4/MP3加速引擎，适配所有浏览器（包括iOS Safari）和Web播放器！</h4>
+<h4 align="center">基于ServiceWorker的MP4/WebM/MP3/WAV加速引擎，适配所有浏览器（包括iOS Safari）和Web播放器！</h4>
 <p align="center">
   <a href="https://www.npmjs.com/package/swarmcloud-mp4-sw"><img src="https://img.shields.io/npm/v/swarmcloud-mp4-sw.svg?style=flat" alt="npm"></a>
   <a href="https://www.jsdelivr.com/package/npm/swarmcloud-mp4-sw"><img src="https://data.jsdelivr.com/v1/package/npm/swarmcloud-mp4-sw/badge" alt="jsdelivr"></a>
