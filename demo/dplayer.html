@@ -6,16 +6,25 @@
     #dplayer{position:inherit}
 </style>
 <div id="dplayer"></div>
-<script src="https://cdn.jsdelivr.net/npm/swarmcloud-mp4-sw@latest"></script>
-<!--<script src="../dist/mp4-p2p-engine.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/swarmcloud-media@latest"></script>
+<!--<script src="../dist/media-p2p-engine.min.js"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/dplayer@1.26.0"></script>
 <script>
-    const dp = new DPlayer({
-        container: document.getElementById('dplayer'),
-        autoplay: true,
-        video: {
-            url: 'https://d2zihajmogu5jn.cloudfront.net/elephantsdream/ed_hd.mp4',
-            hotkey: true,
-        }
+    var engine = new P2pEngineMedia({
+        swFile: './sw.js',
+        // trackerZone: 'hk',        // if using Hongkong tracker
+        // trackerZone: 'us',        // if using USA tracker
+        // token: YOUR_TOKEN
     });
+    engine.getProxiedUrl("https://d2zihajmogu5jn.cloudfront.net/elephantsdream/ed_hd.mp4").then((url) => {
+        const dp = new DPlayer({
+            container: document.getElementById('dplayer'),
+            autoplay: true,
+            video: {
+                url,
+                hotkey: true,
+            }
+        });
+    })
+
 </script>

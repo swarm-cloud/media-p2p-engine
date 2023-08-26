@@ -1,29 +1,29 @@
-<script src="https://cdn.jsdelivr.net/npm/swarmcloud-mp4-sw@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/swarmcloud-media@latest"></script>
 <audio id="audio" controls></audio>
 <p id="version"></p>
 <h3>p2p info:</h3>
 <p id="peers"></p>
 <p id="info"></p>
 <script>
-    document.querySelector('#version').innerText = `p2p version: ${P2PEngineMp4.version}`;
+    document.querySelector('#version').innerText = `p2p version: ${P2pEngineMedia.version}`;
+    var engine = new P2pEngineMedia({
+        swFile: './sw.js',
+        // trackerZone: 'hk',        // if using Hongkong tracker
+        // trackerZone: 'us',        // if using USA tracker
+        // token: YOUR_TOKEN
+    })
+
     var audio = document.getElementById('audio');
     var type = getQueryParam('type')
     if (type === 'wav') {
-        audio.src = './test.wav'
+        engine.getProxiedUrl('./test.wav').then((url) => {
+            audio.src = url
+        })
     } else {
-        audio.src = './test.mp3'
+        engine.getProxiedUrl('./test.mp3').then((url) => {
+            audio.src = url
+        })
     }
-
-    var engine = new P2PEngineMP4({
-        // logLevel: 'debug',
-        pieceLength: 512*1024,
-    });
-
-    engine.registerServiceWorker().then(function (registration) {
-        console.info('ServiceWorker registration successful with scope: ', registration.scope);
-    }).catch((err) => {
-        console.info('ServiceWorker registration failed ', err)
-    });
 
     engine.on('stats', function (stats) {
         var total = stats.totalHTTPDownloaded + stats.totalP2PDownloaded;

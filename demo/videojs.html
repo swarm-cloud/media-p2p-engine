@@ -5,24 +5,31 @@
     <title>Videojs-contrib-mp4</title>
     <link href="//vjs.zencdn.net/7.8.2/video-js.min.css" rel="stylesheet">
     <script src="//vjs.zencdn.net/7.8.2/video.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swarmcloud-mp4-sw@latest"></script>
-<!--    <script src="../dist/mp4-p2p-engine.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/swarmcloud-media@latest"></script>
+<!--    <script src="../dist/media-p2p-engine.min.js"></script>-->
 </head>
 <body>
 <video id="player" class="video-js vjs-default-skin" height="360" width="640" controls preload="none">
 </video>
 <script>
-    var player = videojs('#player', {
-        sources:[
-            {
-                src: 'https://d2zihajmogu5jn.cloudfront.net/elephantsdream/ed_hd.mp4',
-            }
-        ],
-    }, function onPlayerReady() {
-
-        this.play();
-
+    var engine = new P2pEngineMedia({
+        swFile: './sw.js',
+        // trackerZone: 'hk',        // if using Hongkong tracker
+        // trackerZone: 'us',        // if using USA tracker
+        // token: YOUR_TOKEN
     });
+    engine.getProxiedUrl("https://d2zihajmogu5jn.cloudfront.net/elephantsdream/ed_hd.mp4").then((url) => {
+        var player = videojs('#player', {
+            sources:[
+                {
+                    src: url,
+                }
+            ],
+        }, function onPlayerReady() {
+            this.play();
+        });
+    })
+
 </script>
 </body>
 </html>

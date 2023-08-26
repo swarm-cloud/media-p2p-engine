@@ -1,9 +1,18 @@
 <div id="player"></div>
-<script src="https://cdn.jsdelivr.net/npm/swarmcloud-mp4-sw@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/swarmcloud-media@latest"></script>
 <script src="./playerjs.js" type="text/javascript"></script>
 <script>
-    var player = new Playerjs({
-        id:"player",
-        file:"https://d2zihajmogu5jn.cloudfront.net/elephantsdream/ed_hd.mp4",
-    });
+    var engine = new P2pEngineMedia({
+        swFile: './sw.js',
+        // trackerZone: 'hk',        // if using Hongkong tracker
+        // trackerZone: 'us',        // if using USA tracker
+        // token: YOUR_TOKEN
+    })
+    engine.getProxiedUrl("https://d2zihajmogu5jn.cloudfront.net/elephantsdream/ed_hd.mp4").then((url) => {
+        var player = new Playerjs({
+            id:"player",
+            file: url,
+        });
+    })
+
 </script>

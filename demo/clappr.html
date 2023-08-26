@@ -4,18 +4,27 @@
     <meta charset="UTF-8">
     <title>CDNBye Clappr Demo</title>
     <script src="https://cdn.jsdelivr.net/npm/clappr@0.3.13/dist/clappr.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swarmcloud-mp4-sw@latest"></script>
-<!--        <script src="../dist/mp4-p2p-engine.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/swarmcloud-media@latest"></script>
+<!--        <script src="../dist/media-p2p-engine.min.js"></script>-->
 </head>
 <body>
 <div id="player"></div>
 <script>
-    var player = new Clappr.Player(
-        {
-            source: "https://d2zihajmogu5jn.cloudfront.net/elephantsdream/ed_hd.mp4",
-            parentId: "#player",
-            autoPlay: true,
+    var engine = new P2pEngineMedia({
+        swFile: './sw.js',
+        // trackerZone: 'hk',        // if using Hongkong tracker
+        // trackerZone: 'us',        // if using USA tracker
+        // token: YOUR_TOKEN
+    });
+    engine.getProxiedUrl("https://d2zihajmogu5jn.cloudfront.net/elephantsdream/ed_hd.mp4").then((url) => {
+        var player = new Clappr.Player(
+            {
+                source: url,
+                parentId: "#player",
+                autoPlay: true,
         });
+    })
+
 </script>
 </body>
 </html>

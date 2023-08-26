@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>JWPlayer Demo</title>
     <!-- P2P Plugin -->
-    <script src="https://cdn.jsdelivr.net/npm/swarmcloud-mp4-sw@latest"></script>
-<!--    <script src="../dist/mp4-p2p-engine.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/swarmcloud-media@latest"></script>
+<!--    <script src="../dist/media-p2p-engine.min.js"></script>-->
     <!-- JW Player Builds -->
     <script src="//ssl.p.jwpcdn.com/player/v/8.21.2/jwplayer.js"></script>
 </head>
@@ -16,25 +16,23 @@
 </center>
 <script>
     // this demo shows how this SDK works with jwplayer
-
-    window.disableP2pEngineMP4AutoInit = true;
-
     jwplayer.key = "uoW6qHjBL3KNudxKVnwa3rt5LlTakbko9e6aQ6VUyKQ=";
-    jwplayer('demoplayer').setup({
-        file: 'https://d2zihajmogu5jn.cloudfront.net/elephantsdream/ed_hd.mp4',
-        width: 512,
-        height: 288,
-        autostart: true,
+    var engine = new P2pEngineMedia({
+        swFile: './sw.js',
+        // trackerZone: 'hk',        // if using Hongkong tracker
+        // trackerZone: 'us',        // if using USA tracker
+        // token: YOUR_TOKEN
     });
+    engine.getProxiedUrl("https://d2zihajmogu5jn.cloudfront.net/elephantsdream/ed_hd.mp4").then((url) => {
+        jwplayer('demoplayer').setup({
+            file: url,
+            width: 512,
+            height: 288,
+            autostart: true,
+        });
+    })
 
-    var engine = new P2PEngineMP4({
-        // logLevel: 'debug',
-    });
-    engine.registerServiceWorker().then(function (registration) {
-        console.info('ServiceWorker registration successful with scope: ', registration.scope);
-    }).catch((err) => {
-        console.info('ServiceWorker registration failed ', err)
-    });
+
 
 </script>
 </body>

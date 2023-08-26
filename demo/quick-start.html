@@ -1,24 +1,22 @@
-<script src="https://cdn.jsdelivr.net/npm/swarmcloud-mp4-sw@latest"></script>
-<!--<script src="../dist/mp4-p2p-engine.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/swarmcloud-media@latest"></script>
+<!--<script src="../dist/media-p2p-engine.min.js"></script>-->
 <video id="video" controls></video>
 <p id="version"></p>
 <h3>p2p info:</h3>
 <p id="peers"></p>
 <p id="info"></p>
 <script>
-    document.querySelector('#version').innerText = `p2p version: ${P2PEngineMp4.version}`;
+    document.querySelector('#version').innerText = `p2p version: ${P2pEngineMedia.version}`;
     var video = document.getElementById('video');
-    video.src = 'https://d2zihajmogu5jn.cloudfront.net/elephantsdream/ed_hd.mp4'
-    var engine = new P2PEngineMP4({
-        // logLevel: 'debug',
-        pieceLength: 512*1024,
+    var engine = new P2pEngineMedia({
+        swFile: './sw.js',
+        // trackerZone: 'hk',        // if using Hongkong tracker
+        // trackerZone: 'us',        // if using USA tracker
+        // token: YOUR_TOKEN
     });
-
-    engine.registerServiceWorker().then(function (registration) {
-        console.info('ServiceWorker registration successful with scope: ', registration.scope);
-    }).catch((err) => {
-        console.info('ServiceWorker registration failed ', err)
-    });
+    engine.getProxiedUrl("https://d2zihajmogu5jn.cloudfront.net/elephantsdream/ed_hd.mp4").then((url) => {
+        video.src = url;
+    })
 
     engine.on('stats', function (stats) {
         var total = stats.totalHTTPDownloaded + stats.totalP2PDownloaded;
