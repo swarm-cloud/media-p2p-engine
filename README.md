@@ -17,14 +17,14 @@ Service Worker     | ✔ | ✔  | ✔  | ✔  | ✔ | ✔  |  ❌ |
 SwarmCloud         | ✔ | ✔  | ✔  |  ✔ | ✔ |  ✔ |  ❌ |
 
 ## Usage
-See [documentation](https://swarmcloud.net/en/views/media/usage.html)
+See [documentation](https://docs.swarmcloud.net/media)
 
 ## Related Projects
 - [hlsjs-p2p-engine](https://github.com/cdnbye/hlsjs-p2p-engine) - Web Video Delivery Technology with No Plugins for hls.js.
 - [dashjs-p2p-engine](https://github.com/cdnbye/dashjs-p2p-engine) - Web Video Delivery Technology with No Plugins for MPEG-dash.
 
 ## FAQ
-We have collected some [frequently asked questions](https://www.hdtvcloud.com/en/views/FAQ.html). Before reporting an issue, please search if the FAQ has the answer to your problem.
+We have collected some [frequently asked questions](https://docs.swarmcloud.net/faq). Before reporting an issue, please search if the FAQ has the answer to your problem.
 
 ## Contact Us
 Email: service@cdnbye.com
