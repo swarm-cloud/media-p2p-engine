@@ -17,14 +17,14 @@ Service Worker     | ✔ | ✔  | ✔  | ✔  | ✔ | ✔  |  ❌ |
 SwarmCloud         | ✔ | ✔  | ✔  |  ✔ | ✔ |  ✔ |  ❌ |
 
 ## 使用方法
-参考[在线文档](https://swarmcloud.net/cn/views/media/usage.html)
+参考[在线文档](https://swarmcloud.net/cn/media/usage.html)
 
 ## 相关项目
 - [hlsjs-p2p-engine](https://gitee.com/cdnbye/hlsjs-p2p-engine) - HLS协议的Web端P2P流媒体方案。
 - [dashjs-p2p-engine](https://github.com/cdnbye/dashjs-p2p-engine) - MPEG-dash协议的Web端P2P流媒体方案。
 
 ## FAQ
-我们收集了一些[常见问题](https://www.cdnbye.com/cn/views/FAQ.html)。在报告issue之前请先查看一下。
+我们收集了一些[常见问题](https://www.cdnbye.com/faq.html)。在报告issue之前请先查看一下。
 
 ## 联系我们
 邮箱：service@cdnbye.com
