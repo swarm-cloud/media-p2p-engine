@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+<script src="https://cdn.radiantmediatechs.com/rmp/9.9.0/js/rmp.min.js"></script>
+<!-- P2PEngine -->
+<script src="https://cdn.jsdelivr.net/npm/@swarmcloud/media"></script>
+<div id="rmp"></div>
+<button id="switch" style="display: block; height: 20px;width: 50px; ">switch</button>
+<p id="version"></p>
+<h3>download info:</h3>
+<p id="info"></p>
+<script>
+    // config for p2p
+    var p2pConfig = {
+        // logLevel: 'debug',
+        swFile: './sw.js',
+        getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+            var total = totalHTTPDownloaded + totalP2PDownloaded;
+            document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
+        },
+        // trackerZone: 'hk',        // if using Hongkong tracker
+        // trackerZone: 'us',        // if using USA tracker
+        // token: YOUR_TOKEN
+    }
+
+    const elementID = 'rmp';
+    const rmp = new RadiantMP(elementID);
+    var engine = new P2pEngineMedia(p2pConfig)
+    engine.getProxiedUrl("https://d2zihajmogu5jn.cloudfront.net/elephantsdream/ed_hd.mp4").then((url) => {
+        const settings = {
+            licenseKey: 'Kl8lMDQ9b2kzeWNlOHoyZHM3YjgrMnNlP3JvbTVkYXNpczMwZGIwQSVfKg==',  // replace with your own license key
+            src: {
+                mp4: url
+            },
+            width: 640,
+            height: 360,
+        };
+        rmp.init(settings);
+    })
+    document.getElementById("switch").onclick = () => {
+        engine.getProxiedUrl("https://webtorrent.io/torrents/Sintel/Sintel.mp4").then((url) => {
+            const newSourceObject = {
+                mp4: [
+                    url
+                ],
+            };
+            rmp.setSrc(newSourceObject);
+        })
+    }
+
+</script>
+</body>
+</html>

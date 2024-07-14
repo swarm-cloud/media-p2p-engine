@@ -1,10 +1,10 @@
 **[English](README.md) | 简体中文**
 
-<h1 align="center"><a href="" target="_blank" rel="noopener noreferrer"><img width="250" src="https://www.cdnbye.com/logo.png" alt="logo"></a></h1>
+<h1 align="center"><a href="" target="_blank" rel="noopener noreferrer"><img width="250" src="https://www.swarmcloud.net/img/logo.png" alt="logo"></a></h1>
 <h4 align="center">基于ServiceWorker的MP4/WebM/MP3/WAV加速引擎，适配所有浏览器（包括iOS Safari）和Web播放器！</h4>
 <p align="center">
-  <a href="https://www.npmjs.com/package/swarmcloud-media"><img src="https://img.shields.io/npm/v/swarmcloud-media.svg?style=flat" alt="npm"></a>
-  <a href="https://www.jsdelivr.com/package/npm/swarmcloud-media"><img src="https://data.jsdelivr.com/v1/package/npm/swarmcloud-media/badge" alt="jsdelivr"></a>
+  <a href="https://www.npmjs.com/package/@swarmcloud/media"><img src="https://img.shields.io/npm/v/@swarmcloud/media.svg?style=flat" alt="npm"></a>
+  <a href="https://www.jsdelivr.com/package/npm/@swarmcloud/media"><img src="https://data.jsdelivr.com/v1/package/npm/@swarmcloud/media/badge" alt="jsdelivr"></a>
 </p>
 
 ## 浏览器支持情况

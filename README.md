@@ -1,10 +1,10 @@
 **English | [简体中文](Readme_zh.md)**
 
-<h1 align="center"><a href="" target="_blank" rel="noopener noreferrer"><img width="250" src="https://www.cdnbye.com/logo.png" alt="logo"></a></h1>
+<h1 align="center"><a href="" target="_blank" rel="noopener noreferrer"><img width="250" src="https://www.swarmcloud.net/img/logo.png" alt="logo"></a></h1>
 <h4 align="center">P2P SDK for MP4/WebM/MP3/WAV streaming, supporting all browsers and web players, with the help of ServiceWorker and WebRTC.</h4>
 <p align="center">
-  <a href="https://www.npmjs.com/package/swarmcloud-media"><img src="https://img.shields.io/npm/v/swarmcloud-media.svg?style=flat" alt="npm"></a>
-  <a href="https://www.jsdelivr.com/package/npm/swarmcloud-media"><img src="https://data.jsdelivr.com/v1/package/npm/swarmcloud-media/badge" alt="jsdelivr"></a>
+  <a href="https://www.npmjs.com/package/@swarmcloud/media"><img src="https://img.shields.io/npm/v/@swarmcloud/media.svg?style=flat" alt="npm"></a>
+  <a href="https://www.jsdelivr.com/package/npm/@swarmcloud/media"><img src="https://data.jsdelivr.com/v1/package/npm/@swarmcloud/media/badge" alt="jsdelivr"></a>
 </p>
 
 ## Browser Support
