@@ -17,30 +17,16 @@
     })
 
     var audio = document.getElementById('audio');
-    var type = getQueryParam('type')
-    if (type === 'wav') {
-        engine.getProxiedUrl('./test.wav').then((url) => {
-            const ap = new APlayer({
-                container: document.getElementById('aplayer'),
-                audio: [{
-                    name: 'name',
-                    artist: 'artist',
-                    url: url,
-                }]
-            });
-        })
-    } else {
-        engine.getProxiedUrl('./test.mp3').then((url) => {
-            const ap = new APlayer({
-                container: document.getElementById('aplayer'),
-                audio: [{
-                    name: 'name',
-                    artist: 'artist',
-                    url: url,
-                }]
-            });
-        })
-    }
+    engine.getProxiedUrl('./test.mp3').then((url) => {
+        const ap = new APlayer({
+            container: document.getElementById('aplayer'),
+            audio: [{
+                name: 'name',
+                artist: 'artist',
+                url: url,
+            }]
+        });
+    })
 
     engine.on('stats', function (stats) {
         var total = stats.totalHTTPDownloaded + stats.totalP2PDownloaded;

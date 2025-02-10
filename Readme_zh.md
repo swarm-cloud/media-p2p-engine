@@ -17,7 +17,7 @@ Service Worker     | ✔ | ✔  | ✔  | ✔  | ✔ | ✔  |  ❌ |
 SwarmCloud         | ✔ | ✔  | ✔  |  ✔ | ✔ |  ✔ |  ❌ |
 
 ## 使用方法
-参考[在线文档](https://swarmcloud.net/cn/media/usage.html)
+参考[在线文档](https://www.cdnbye.com/cn/media/usage.html)
 
 ## 相关项目
 - [hlsjs-p2p-engine](https://gitee.com/cdnbye/hlsjs-p2p-engine) - HLS协议的Web端P2P流媒体方案。
